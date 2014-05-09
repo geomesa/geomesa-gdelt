@@ -30,6 +30,7 @@ public class GDELTIngestMapper extends Mapper<LongWritable,Text,Key,Value> {
     private static int LONGITUDE_COL_IDX = 40;
     private static int DATE_COL_IDX = 1;
     private static int ID_COL_IDX = 0;
+    private static int MINIMUM_NUM_FIELDS = 41;
 
     private SimpleFeatureType featureType = null;
     private FeatureWriter<SimpleFeatureType, SimpleFeature> featureWriter = null;
@@ -57,7 +58,7 @@ public class GDELTIngestMapper extends Mapper<LongWritable,Text,Key,Value> {
 
     public void map(LongWritable key, Text value, Mapper<LongWritable,Text,Key,Value>.Context context) {
         String[] attributes = value.toString().split("\\t", -1);
-        if (!attributes[LATITUDE_COL_IDX].equals("") && !attributes[LONGITUDE_COL_IDX].equals("")) {
+        if (attributes.length >= MINIMUM_NUM_FIELDS && !attributes[LATITUDE_COL_IDX].equals("") && !attributes[LONGITUDE_COL_IDX].equals("")) {
             SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
             try {
                 featureBuilder.reset();
