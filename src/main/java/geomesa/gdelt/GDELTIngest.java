@@ -57,7 +57,6 @@ public class GDELTIngest {
                                          .create(PASSWORD);
         Option authsOpt = OptionBuilder.withArgName(AUTHS)
                                          .hasArg()
-                                         .isRequired()
                                          .withDescription("accumulo connection parameter auths")
                                          .create(AUTHS);
         Option tableNameOpt = OptionBuilder.withArgName(TABLE_NAME)
@@ -85,6 +84,7 @@ public class GDELTIngest {
         for (String param : ACCUMULO_CONNECTION_PARAMS) {
             dsConf.put(param, cmd.getOptionValue(param));
         }
+        if (dsConf.get(AUTHS) == null) dsConf.put(AUTHS, "");
         return dsConf;
     }
 
