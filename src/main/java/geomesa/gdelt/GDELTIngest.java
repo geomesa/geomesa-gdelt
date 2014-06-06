@@ -27,11 +27,12 @@ public class GDELTIngest {
     static String USER = "user";
     static String PASSWORD = "password";
     static String AUTHS = "auths";
+    static String VISIBILITY = "visibility";
     static String TABLE_NAME = "tableName";
     static String FEATURE_NAME = "featureName";
     static String INGEST_FILE = "ingestFile";
     static String[] ACCUMULO_CONNECTION_PARAMS = new String[]{INSTANCE_ID,
-            ZOOKEEPERS, USER, PASSWORD, AUTHS, TABLE_NAME};
+            ZOOKEEPERS, USER, PASSWORD, AUTHS, VISIBILITY, TABLE_NAME};
 
     static Options getCommonRequiredOptions() {
         Options options = new Options();
@@ -59,6 +60,10 @@ public class GDELTIngest {
                                          .hasArg()
                                          .withDescription("accumulo connection parameter auths")
                                          .create(AUTHS);
+        Option visibilityOpt = OptionBuilder.withArgName(VISIBILITY)
+                                       .hasArg()
+                                       .withDescription("visibility label that will be applied to the data")
+                                       .create(VISIBILITY);
         Option tableNameOpt = OptionBuilder.withArgName(TABLE_NAME)
                                          .hasArg()
                                          .isRequired()
@@ -74,6 +79,7 @@ public class GDELTIngest {
         options.addOption(userOpt);
         options.addOption(passwordOpt);
         options.addOption(authsOpt);
+        options.addOption(visibilityOpt);
         options.addOption(tableNameOpt);
         options.addOption(featureNameOpt);
         return options;
