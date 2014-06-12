@@ -46,7 +46,7 @@ public class GDELTIngestMapper extends Mapper<LongWritable,Text,Key,Value> {
         connectionParams.put("user", context.getConfiguration().get("user"));
         connectionParams.put("password", context.getConfiguration().get("password"));
         connectionParams.put("auths", context.getConfiguration().get("auths"));
-        connectionParams.put("visibility", context.getConfiguration().get("visibility"));
+        connectionParams.put("visibilities", context.getConfiguration().get("visibilities"));
         connectionParams.put("tableName", context.getConfiguration().get("tableName"));
 
         String featureName = context.getConfiguration().get("featureName");

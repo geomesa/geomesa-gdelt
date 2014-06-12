@@ -27,7 +27,7 @@ public class GDELTIngest {
     static String USER = "user";
     static String PASSWORD = "password";
     static String AUTHS = "auths";
-    static String VISIBILITY = "visibility";
+    static String VISIBILITY = "visibilities";
     static String TABLE_NAME = "tableName";
     static String FEATURE_NAME = "featureName";
     static String INGEST_FILE = "ingestFile";
