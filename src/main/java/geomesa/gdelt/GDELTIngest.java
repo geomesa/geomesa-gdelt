@@ -91,6 +91,7 @@ public class GDELTIngest {
             dsConf.put(param, cmd.getOptionValue(param));
         }
         if (dsConf.get(AUTHS) == null) dsConf.put(AUTHS, "");
+        if (dsConf.get(VISIBILITY) == null) dsConf.put(VISIBILITY, "");
         return dsConf;
     }
 
