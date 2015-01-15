@@ -14,9 +14,9 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>geomesa</groupId>
+            <groupId>org.locationtech.geomesa</groupId>
             <artifactId>geomesa-core-accumulo1.5</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.0.0-rc.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.accumulo</groupId>
@@ -31,17 +31,17 @@
         <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-opengis</artifactId>
-            <version>11.0</version>
+            <version>11.2</version>
         </dependency>
         <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-data</artifactId>
-            <version>11.0</version>
+            <version>11.2</version>
         </dependency>
         <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-epsg-hsql</artifactId>
-            <version>11.0</version>
+            <version>11.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
@@ -123,5 +123,10 @@
             </plugin>
         </plugins>
     </build>
-
+	<repositories>
+        <repository>
+	    	<id>locationtech</id>
+			<url>https://repo.locationtech.org/content/repositories/releases</url>
+		</repository>
+	</repositories>
 </project>

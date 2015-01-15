@@ -2,7 +2,7 @@ package geomesa.gdelt;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
-import geomesa.core.index.Constants;
+import org.locationtech.geomesa.core.index.Constants;
 import org.apache.accumulo.core.client.mapreduce.AccumuloFileOutputFormat;
 import org.apache.commons.cli.*;
 import org.apache.hadoop.conf.Configuration;
