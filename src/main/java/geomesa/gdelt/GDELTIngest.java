@@ -135,7 +135,7 @@ public class GDELTIngest {
         FileInputFormat.setInputPaths(job, mapredCSVFilePath);
         Path tmpPath = new Path("///tmp");
         if (!fs.exists(tmpPath)) {
-            fs.create(tmpPath);
+            fs.mkdirs(tmpPath);
         }
         Path outputDir = new Path("///tmp", "geomesa-gdelt-output");
         if (fs.exists(outputDir)) {
