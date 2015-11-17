@@ -11,12 +11,13 @@
     <properties>
         <accumulo.version>1.5.0</accumulo.version>
         <hadoop.version>2.2.0</hadoop.version>
+        <geomesa.version>1.1.0-rc.6</geomesa.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.locationtech.geomesa</groupId>
-            <artifactId>geomesa-core-accumulo1.5</artifactId>
-            <version>1.0.0-rc.4-SNAPSHOT</version>
+            <artifactId>geomesa-accumulo-datastore</artifactId>
+            <version>${geomesa.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.accumulo</groupId>

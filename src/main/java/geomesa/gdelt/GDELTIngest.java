@@ -2,7 +2,6 @@ package geomesa.gdelt;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
-import org.locationtech.geomesa.core.index.Constants;
 import org.apache.accumulo.core.client.mapreduce.AccumuloFileOutputFormat;
 import org.apache.commons.cli.*;
 import org.apache.hadoop.conf.Configuration;
@@ -16,9 +15,12 @@ import org.geotools.data.DataStore;
 import org.geotools.data.DataStoreFinder;
 import org.geotools.data.DataUtilities;
 import org.geotools.feature.SchemaException;
+import org.locationtech.geomesa.accumulo.index.Constants;
 import org.opengis.feature.simple.SimpleFeatureType;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class GDELTIngest {
 
