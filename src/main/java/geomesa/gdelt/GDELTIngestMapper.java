@@ -54,7 +54,7 @@ public class GDELTIngestMapper extends Mapper<LongWritable,Text,Key,Value> {
         DataStore ds = DataStoreFinder.getDataStore(connectionParams);
         featureType = ds.getSchema(featureName);
         featureBuilder = new SimpleFeatureBuilder(featureType);
-        featureWriter = ds.getFeatureWriter(featureName, Transaction.AUTO_COMMIT);
+        featureWriter = ds.getFeatureWriterAppend(featureName, Transaction.AUTO_COMMIT);
     }
 
     public void map(LongWritable key, Text value, Mapper<LongWritable,Text,Key,Value>.Context context) {
